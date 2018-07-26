@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="20.0">
+    <meta>
+        <filters directoryPatterns="" filePatterns="presentation-2018.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="presentation-2018.xpr">
+        <folder path="."/>
+        <file name="../../../Dropbox/Balisage/2018/case-for-style-guides/draft1/Bal2018nord0128.xml"/>
+    </projectTree>
+</project>

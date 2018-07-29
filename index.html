@@ -84,12 +84,29 @@
                     <!-- DB lists, schema expansion, legal pub lists -->
                     
                     <section>
-                        <p>Let's have a look at another kind of queue...</p>
+                        <p>Let's have a look at some tags with a similar theme...</p>
+                        <p class="fragment">...a list</p>
                     </section>
                     
                     <!-- List, p wrapper -->
+                    <!--<section>
+                        <!-\-<pre class="stretch">
+                            <code class="xml">&lt;para>Here are my favourite films:
+    &lt;list>
+        &lt;item>Close Encounters of the Third Kind&lt;/item>
+        &lt;item>2001&lt;/item>
+        &lt;item>Amadeus&lt;/item>
+    &lt;/list>
+&lt;/para></code>
+                        </pre>-\->
+                        
+                        <aside class="notes">
+                            
+                        </aside>
+                    </section>-->
+                    
                     <section>
-                        <p>...a list:</p>
+                        <p>A common way to write a list is</p>
                         
                         <pre class="stretch">
                             <code class="xml">&lt;para>Here are my favourite films:
@@ -135,7 +152,7 @@
                     
                     <!-- But just as many write -->
                     <section>
-                        <p>The more conscious writer tags like this</p>
+                        <p>Just as many write</p>
                         
                         <pre class="stretch">
                             <code class="xml">&lt;para>Here are my favourite films:&lt;/para>
@@ -171,7 +188,7 @@
                     <!-- and others update it further because someone once used this OTHER type of content
                          and sometimes they are right v-->
                     <section>
-                        <p>But then complications happen</p>
+                        <p>Sometimes people expand the model further</p>
                         
                         <pre class="stretch">
                             <code class="xml">&lt;!ELEMENT list  (title?, (para | note | warning)*,
@@ -200,6 +217,9 @@
                         
                         <p class="fragment">...no, not all this!</p>
                         
+                        <p class="fragment">they put them in because somebody somewhere did, for some reason</p>
+                        <p class="fragment">or because it looked pretty</p>
+                        
                         <aside class="notes">
                             <p>but more often, not</p>
                             <p>they put them in because somebody did, somewhere, for some reason, once or twice</p>
@@ -207,8 +227,21 @@
                         </aside>
                     </section>
                     
+                </section>
+                
+                <!-- END of list markup examples -->
+                
+                
+                
+                
+                <!-- START of Looking Pretty -->
+                
+                <section>
                     <section>
-                        <p>Often, it's simply about looking pretty...</p>
+                        <p>But sometimes it is simply about looking pretty...</p>
+                        
+                        <img src="img/tuco.jpg"/>
+                        
                     </section>
                     
                     <!-- Legal publishing list types -->
@@ -246,7 +279,7 @@
                     
                     
                     <!-- TEST -->
-                    <section>
+                    <!--<section>
                         <pre class="stretch">
                             <code class="xml" data-trim data-noescape>&lt;lnci:cite type=&quot;paragraph-ref&quot;&gt;
     &lt;lnci:book&gt;
@@ -271,38 +304,44 @@
                             <p>Wrapping the two in a cite element like this had to consider any text BETWEEN the two</p>
                             <p>This was done with a regex, too. Not as easy as it may seem, however.</p>
                         </aside>
-                    </section>
+                    </section>-->
                     
                     
                     
                     <!-- Legal para example -->
                     <section>
                         
-                        <p>...so I looked up the DTD...</p>
+                        <p>I looked up the DTD...</p>
                         
-                        <pre class="stretch">
-                            <code class="xml">&lt;!ATTLIST core:list  
-	  type ( bullet | check-box | lower-alpha | lower-roman |
-             mdash | ndash | number | plain | upper-alpha |
-             upper-roman | upper-alpha-alpha | lower-alpha-alpha |
-             smallcaps-alpha-alpha )
-             #REQUIRED 
-	  restart (yes | no) 'yes' 
-	  source-pnum CDATA #IMPLIED 
-	  %display-atts;
-	  lni CDATA #IMPLIED
-	 ></code>
-                        </pre>
+                        <div class="fragment">
+                            <pre class="stretch">
+                                <code class="xml">&lt;!ATTLIST core:list  
+    	  type ( bullet | check-box | lower-alpha |
+    	         lower-roman | mdash | ndash | number |
+    	         plain | upper-alpha | upper-roman | 
+    	         upper-alpha-alpha | lower-alpha-alpha |
+                 smallcaps-alpha-alpha )
+                 #REQUIRED 
+    	  restart (yes | no) 'yes' 
+    	  source-pnum CDATA #IMPLIED 
+    	  %display-atts;
+    	  lni CDATA #IMPLIED
+    	 ></code>
+                           </pre>
+                        </div>
                         
-                        <p class="fragment"><strong>Every ordered list item in a legal paragraph must be unique!</strong></p>
+                        
+                        
+                        <p class="fragment">...this is actually as it should be</p>
                         
                         <aside class="notes">
                             <p>Explain the actual reason</p>
+                            <p>Every ordered list item in a legal paragraph must be unique!</p>
                         </aside>
                     </section>
                     
                     <section>
-                        <p>But authors do not always understand the why...</p>
+                        <p>Authors don't always understand the whys...</p>
                         
                         <p class="fragment" data-fragment-index="1">...so this sort of thing happens:</p>
                         
@@ -317,12 +356,9 @@
                             <p>What's wrong with this picture?</p>
                         </aside>
                     </section>
-                    
                 </section>
                 
-                <!-- END of list markup examples -->
-                
-                
+                <!-- END of Looking Pretty -->
                 
                 
                 <!-- START of Why Does This Happen? -->
@@ -330,23 +366,25 @@
                 <section>
                     
                     <section>
-                        <p>Why does this happen?</p>
-                        <p class="fragment">Better yet, <em>what</em> happens?</p>
+                        <p>Why does it happen?</p>
+                        <p class="fragment">And exactly <em>what</em> happens?</p>
                     </section>
                     
                     <!-- Explanation of style vs semantics -->
                     <section>
                         <p>Remember this?</p>
                         
-                        <p>Follow these steps:</p>
-                        <ul>
-                            <li>Do this.</li>
-                            <li>Then do this.</li>
-                            <li>And finally do this.</li>
-                        </ul>
+                        <blockquote>
+                            <p>Follow these steps:</p>
+                            <ul>
+                                <li>Do this.</li>
+                                <li>Then do this.</li>
+                                <li>And finally do this.</li>
+                            </ul>
+                        </blockquote>
                         
-                        <p class="fragment">Not an unordered list</p>
-                        <p class="fragment">Not an ordered list</p>
+                        <p class="fragment">It's not an unordered list</p>
+                        <p class="fragment">It's not an ordered list</p>
                         
                         <aside class="notes">
                             <p>Several misunderstandings here. This is not an unordered list - bullets mean "order is not important, I'm just listing items".</p>
@@ -357,18 +395,17 @@
                     
                     <section>
                         <p>It's a <strong>procedure</strong></p>
+                        <p class="fragment">The bullets are a misguided attempt at looking pretty</p>
                     </section>
                     
                     <section>
-                        <p>The bullets are a misguided attempt at looking pretty</p>
+                        <p>I'm sure we've all seen this sort of thing</p>
                         
-                        <p class="fragment">I'm sure we've all seen this sort of thing</p>
-                        
-                        <pre class="fragment">
+                        <pre>
                             <code class="xml">&lt;emphasis type=&quot;bold italic&quot;>emphasised content&lt;/emphasis&gt;</code>
                         </pre>
                         
-                        <p><span class="fragment">Spare part?</span><span class="fragment"> GUI object?</span><span class="fragment"> Legal term?</span><span class="fragment"> Some random important word with pretty formatting?</span></p>
+                        <p><span class="fragment" data-fragment-index="2">Spare part?</span><span class="fragment" data-fragment-index="3"> GUI object?</span><span class="fragment" data-fragment-index="4"> Legal term?</span><span class="fragment" data-fragment-index="5"> Some random important word with pretty formatting?</span></p>
                         
                         <aside class="notes">
                             <p>Schema documentation autogenerated and not up to date. Often, this does not mean anything, at lest not consistently.
@@ -402,18 +439,8 @@
                         <p>We don't know unless you tell us.</p>
                     </section>
                     
-                </section>
-                
-                <!-- END of Why Does This Happen? -->
-                
-                
-                
-                
-                <!-- START of What Is A Style Guide? -->
-                
-                <section>
                     <section>
-                        <p>What To Do About It?</p>
+                        <p>What should we do about it?</p>
                     </section>
                     
                     <section>
@@ -428,8 +455,21 @@
                         </aside>
                     </section>
                     
+                </section>
+                
+                <!-- END of Why Does This Happen? -->
+                
+                
+                
+                
+                <!-- START of What Is A Style Guide? -->
+                
+                <section>
+                    
                     <section>
-                        <p>In the olden days, a house style was described by a style guide.</p>
+                        <p>In the olden days, a house style was described by a style guide</p>
+                        
+                        <img src="img/reporter%20newspaper%20city%20editor.jpg-500x400.jpg"/>
                     </section>
                     
                     <section>
@@ -445,7 +485,7 @@
                     
                     <section>
                         <blockquote>
-                            <p>Always introduce a list with a paragraph that explains what is listed. The introductory paragraph is not a title; rather, it is a qualifier, giving the list its proper context. It, just as the list, is an integral part of the text flow, and should, just as the list, be written to fit the surrounding text.</p>
+                            <p>Always introduce a list with a paragraph that explains the list's purpose. The introductory paragraph is not a title; rather, it is a qualifier, giving the list its proper context.</p>
                         </blockquote>
                     </section>
                     
@@ -468,7 +508,7 @@
                     </section>
                     
                     <section>
-                        <img class="stretch" src="img/OnceUponATime.jpg"/>
+                        <img width="50%" src="img/OnceUponATime.jpg"/>
                     </section>
                     
                     <section>
@@ -505,6 +545,14 @@
                         <p>A Cautionary Tale</p>
                         
                         <img class="stretch" src="img/drawing-london-cab.png"/>
+                        
+                        <aside class="notes">
+                            <p>So, how do I get one?</p>
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <p>So, how do I get one?</p>
                     </section>
                 </section>
                 
@@ -538,17 +586,16 @@
                     </section>
                     
                     <section>
-                        <p>What should result</p>
+                        <!--<p>What should result</p>-->
                         
-                        <p class="fragment">Separation of concerns</p>
-                        <p class="fragment">Let the schema enforce the structure and the Schematron suggest a style defined in the style guide</p>
-                    </section>
-                    
-                    <section>
-                        <p>The schema should be as small as possible</p>
+                        <p>Separation of concerns</p>
+                        <p class="fragment">Schema checks structure, Schematron the styles defined in a style guide</p>
+                        <p class="fragment">...allowing the schema to remain small</p>
                         
                         <aside class="notes">
                             <p>Small as in no unnecessary models, elements, etc</p>
+                            
+                            <p>In some ways this is the easiest paper I've ever written. I could have just told you to get a style guide, right from the start, and you might have had a cold beer to enjoy now.</p>
                         </aside>
                     </section>
                     
@@ -591,7 +638,7 @@
                     </section>
                     
                     <section>
-                        <p>The SCHs should check rules defined in a style guide, not *define* the style guide.</p>
+                        <p>The Schematron should check rules defined in a style guide, not define it.</p>
                         <p class="fragment">A Schematron checks content after the fact; the style guide allows content to be created that <em>avoids</em> the errors to begin with.</p>
                         
                         <aside class="notes">

@@ -155,7 +155,7 @@
                     
                     <!-- I always want to update the schema to say -->
                     <section>
-                        <!--<p>...see, we actually want this</p>-->
+                        <p>...see, we actually want this</p>
                         
                         <pre class="stretch">
                             <code class="xml" data-trim data-noescape>&lt;!ELEMENT list  <span class="fragment highlight-red">(para, item+)</span>&gt; </code>
@@ -171,7 +171,7 @@
                     <!-- and others update it further because someone once used this OTHER type of content
                          and sometimes they are right v-->
                     <section>
-                        <h4>But then complications happen</h4>
+                        <p>But then complications happen</p>
                         
                         <pre class="stretch">
                             <code class="xml">&lt;!ELEMENT list  (title?, (para | note | warning)*,
@@ -187,7 +187,7 @@
                     
                     <!-- (something about deceptive complexity and looking pretty) -->
                     <section>
-                        <h4>...or?</h4>
+                        <p>...or?</p>
                         
                         <pre class="stretch">
                             <code class="xml">&lt;!ELEMENT list  (title?, (para | note | warning | graphic | table)*,
@@ -208,35 +208,35 @@
                     </section>
                     
                     <section>
-                        <p>Is this about looking pretty?</p>
+                        <p>Often, it's simply about looking pretty...</p>
                     </section>
                     
                     <!-- Legal publishing list types -->
                     <section>
                         
-                        <pre class="stretch">
-                            <code class="xml" data-trim data-noescape>&lt;core:para-grp&gt;
+                        <p>...or is it?</p>
+                        
+                        <div class="fragment">
+                            <pre class="stretch">
+                                <code class="xml" data-trim data-noescape>&lt;core:para-grp&gt;
     &lt;core:desig value=&quot;17&quot;&gt;17.&lt;/core:desig&gt;
     &lt;core:title&gt;General financial arrangements.&lt;/core:title&gt;
     
     &lt;core:para&gt;The following are to be paid out ...:&lt;/core:para&gt;
-    &lt;core:list type=&quot;number&quot;&gt;
-        &lt;core:listitem&gt;
-            &lt;core:para&gt;contributory benefit...;&lt;/core:para&gt;
-        &lt;/core:listitem&gt;
+    &lt;core:list <span class="fragment highlight-red">type=&quot;number&quot;</span>&gt;
+        &lt;core:listitem&gt;...&lt;/core:listitem&gt;
         ...
     &lt;/core:list&gt;
-    
+    ...
     &lt;core:para&gt;The following are to be paid out ...:&lt;/core:para&gt;
     &lt;core:list type=&quot;lower-alpha&quot;&gt;
-        &lt;core:listitem&gt;
-            &lt;core:para&gt;any administrative expenses of the Secretary of State...&lt;/core:para&gt;
-        &lt;/core:listitem&gt;
+        &lt;core:listitem&gt;...&lt;/core:listitem&gt;
         ...
     &lt;/core:list&gt;
     ...
 &lt;/core:para-grp&gt;</code>
-                        </pre>
+                            </pre>
+                        </div>
                         
                         <!-- Explanation of reason to above -->
                         <aside class="notes">
@@ -244,8 +244,42 @@
                         </aside>
                     </section>
                     
+                    
+                    <!-- TEST -->
+                    <section>
+                        <pre class="stretch">
+                            <code class="xml" data-trim data-noescape>&lt;lnci:cite type=&quot;paragraph-ref&quot;&gt;
+    &lt;lnci:book&gt;
+        &lt;lnci:bookref&gt;
+            &lt;lnci:publicationname
+                value=&quot;sentencing&quot;/&gt;
+            &lt;lnci:paragraph
+                num=&quot;1&quot;/&gt;
+        &lt;/lnci:bookref&gt;
+    &lt;/lnci:book&gt;
+    &lt;lnci:content&gt;
+        &lt;core:emph
+            typestyle=&quot;smcaps&quot;&gt;sentencing&lt;/core:emph&gt;
+                <span class="fragment highlight-red"> vol 92 (2015) </span>&lt;core:emph
+            typestyle=&quot;smcaps&quot;&gt;para&lt;/core:emph&gt; 1&lt;/lnci:content&gt;
+&lt;/lnci:cite&gt;</code>
+                        </pre>
+                        
+                        <aside class="notes">
+                            <p>We've already seen how the ref markup was created</p>
+                            <p>Publication names were also handled in an earlier step</p>
+                            <p>Wrapping the two in a cite element like this had to consider any text BETWEEN the two</p>
+                            <p>This was done with a regex, too. Not as easy as it may seem, however.</p>
+                        </aside>
+                    </section>
+                    
+                    
+                    
                     <!-- Legal para example -->
                     <section>
+                        
+                        <p>...so I looked up the DTD...</p>
+                        
                         <pre class="stretch">
                             <code class="xml">&lt;!ATTLIST core:list  
 	  type ( bullet | check-box | lower-alpha | lower-roman |
@@ -260,10 +294,27 @@
 	 ></code>
                         </pre>
                         
-                        
+                        <p class="fragment"><strong>Every ordered list item in a legal paragraph must be unique!</strong></p>
                         
                         <aside class="notes">
                             <p>Explain the actual reason</p>
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <p>But authors do not always understand the why...</p>
+                        
+                        <p class="fragment" data-fragment-index="1">...so this sort of thing happens:</p>
+                        
+                        <p class="fragment" data-fragment-index="2">Follow these steps:</p>
+                        <ul class="fragment" data-fragment-index="2">
+                            <li>Do this.</li>
+                            <li>Then do this.</li>
+                            <li>And finally do this.</li>
+                        </ul>
+                        
+                        <aside class="notes">
+                            <p>What's wrong with this picture?</p>
                         </aside>
                     </section>
                     
@@ -275,6 +326,83 @@
                 
                 
                 <!-- START of Why Does This Happen? -->
+                
+                <section>
+                    
+                    <section>
+                        <p>Why does this happen?</p>
+                        <p class="fragment">Better yet, <em>what</em> happens?</p>
+                    </section>
+                    
+                    <!-- Explanation of style vs semantics -->
+                    <section>
+                        <p>Remember this?</p>
+                        
+                        <p>Follow these steps:</p>
+                        <ul>
+                            <li>Do this.</li>
+                            <li>Then do this.</li>
+                            <li>And finally do this.</li>
+                        </ul>
+                        
+                        <p class="fragment">Not an unordered list</p>
+                        <p class="fragment">Not an ordered list</p>
+                        
+                        <aside class="notes">
+                            <p>Several misunderstandings here. This is not an unordered list - bullets mean "order is not important, I'm just listing items".</p>
+                            <p>It's also not an ordered list - an ordered list is something describing items in order of preference.</p>
+                            <p>It's a procedure. It looks like an ordered list but it's anything but.</p>
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <p>It's a <strong>procedure</strong></p>
+                    </section>
+                    
+                    <section>
+                        <p>The bullets are a misguided attempt at looking pretty</p>
+                        
+                        <p class="fragment">I'm sure we've all seen this sort of thing</p>
+                        
+                        <pre class="fragment">
+                            <code class="xml">&lt;emphasis type=&quot;bold italic&quot;>emphasised content&lt;/emphasis&gt;</code>
+                        </pre>
+                        
+                        <p><span class="fragment">Spare part?</span><span class="fragment"> GUI object?</span><span class="fragment"> Legal term?</span><span class="fragment"> Some random important word with pretty formatting?</span></p>
+                        
+                        <aside class="notes">
+                            <p>Schema documentation autogenerated and not up to date. Often, this does not mean anything, at lest not consistently.
+                                
+                                But witness the legal doc list problem.</p>
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <p>So?</p>
+                        <p class="fragment">We've analysed docs</p>
+                        <p class="fragment">We've created a DTD that describes them</p>
+                        <p class="fragment">We've (hopefully) identified the various types of lists</p>
+                        <p class="fragment">We've (maybe) identified inline semantics</p>
+                    </section>
+                    
+                    <section>
+                        <p><em>But I'm betting we haven't described how and when to use any of them.</em></p>
+                        
+                        <p class="fragment">It could be (and often is) that it really is about looking pretty and nothing more.</p>
+                        <p class="fragment">It could also be that the analysis didn't discover the why.</p>
+                        <p class="fragment">Or it could be that different writers do the same thing differently.</p>
+                        <p class="fragment">Or, conversely, that this writer simply did what (he thought) the previous writer did.</p>
+                        
+                        <aside class="notes">
+                            <p></p>
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <p>We don't know unless you tell us.</p>
+                    </section>
+                    
+                </section>
                 
                 <!-- END of Why Does This Happen? -->
                 

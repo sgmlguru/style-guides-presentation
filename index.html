@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
 		<title>reveal.js</title>
 
@@ -12,7 +12,7 @@
 	    <link rel="stylesheet" href="css/ari.css" />
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css"/>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -141,7 +141,8 @@
                     <section>
                         <p>What they (usually) mean</p>
                         
-                        <ul>Here are my favourite films:
+                        <p>Here are my favourite films:</p>
+                        <ul>
                             <li>Close Encounters of the Third Kind</li>
                             <li>2001</li>
                             <li>Amadeus</li>
@@ -207,6 +208,8 @@
                     <!-- (something about deceptive complexity and looking pretty) -->
                     <section>
                         <p>...or?</p>
+                        
+                        <!-- Add fake elements and attrs to completely saturate the example -->
                         
                         <pre class="stretch">
                             <code class="xml">&lt;!ELEMENT list  (title?, (para | note | warning | graphic | table)*,
@@ -279,35 +282,6 @@
                             <p>Note the intro paras</p>
                         </aside>
                     </section>
-                    
-                    
-                    <!-- TEST -->
-                    <!--<section>
-                        <pre class="stretch">
-                            <code class="xml" data-trim data-noescape>&lt;lnci:cite type=&quot;paragraph-ref&quot;&gt;
-    &lt;lnci:book&gt;
-        &lt;lnci:bookref&gt;
-            &lt;lnci:publicationname
-                value=&quot;sentencing&quot;/&gt;
-            &lt;lnci:paragraph
-                num=&quot;1&quot;/&gt;
-        &lt;/lnci:bookref&gt;
-    &lt;/lnci:book&gt;
-    &lt;lnci:content&gt;
-        &lt;core:emph
-            typestyle=&quot;smcaps&quot;&gt;sentencing&lt;/core:emph&gt;
-                <span class="fragment highlight-red"> vol 92 (2015) </span>&lt;core:emph
-            typestyle=&quot;smcaps&quot;&gt;para&lt;/core:emph&gt; 1&lt;/lnci:content&gt;
-&lt;/lnci:cite&gt;</code>
-                        </pre>
-                        
-                        <aside class="notes">
-                            <p>We've already seen how the ref markup was created</p>
-                            <p>Publication names were also handled in an earlier step</p>
-                            <p>Wrapping the two in a cite element like this had to consider any text BETWEEN the two</p>
-                            <p>This was done with a regex, too. Not as easy as it may seem, however.</p>
-                        </aside>
-                    </section>-->
                     
                     
                     
@@ -400,11 +374,18 @@
                     
                     <section>
                         <p>It's a <strong>procedure</strong></p>
-                        <p class="fragment">The bullets are a misguided attempt at looking pretty</p>
+                        
+                        <!--<p class="fragment">The bullets are a failure of semantics and a failure of style</p>-->
+                        
+                        <p class="fragment">The bullets are a misguided attempt at looking pretty.</p>
+                        
+                        <aside class="notes">
+                            <p>It's a failure of semantics but also a failure of style</p>
+                        </aside>
                     </section>
                     
                     <section>
-                        <p>I'm sure we've all seen this sort of thing</p>
+                        <p>We've all seen this sort of thing</p>
                         
                         <pre>
                             <code class="xml">&lt;emphasis type=&quot;bold italic&quot;>emphasised content&lt;/emphasis&gt;</code>
@@ -419,6 +400,7 @@
                         </aside>
                     </section>
                     
+                    <!-- Heading: how did this come about? -->
                     <section>
                         <p>So?</p>
                         <p class="fragment">We've analysed docs</p>
@@ -428,7 +410,7 @@
                     </section>
                     
                     <section>
-                        <p><em>But I'm betting we haven't described how and when to use any of them.</em></p>
+                        <p><em>But I'm betting nobody described how or when to use any of it.</em></p>
                         
                         <p class="fragment">It could be that it really is about looking pretty and nothing more.</p>
                         <p class="fragment">It could be that the analysis didn't discover the why.</p>
@@ -442,11 +424,12 @@
                     
                     <section>
                         <p>We don't know unless you tell us.</p>
+                        <p class="fragment">What should we do about it?</p>
                     </section>
                     
-                    <section>
+                    <!--<section>
                         <p>What should we do about it?</p>
-                    </section>
+                    </section>-->
                     
                     <section>
                         <p>Schematron? Schematron Quick Fixes?</p>
@@ -490,6 +473,7 @@
                         <p class="fragment">Remember those list variants?</p>
                         
                         <aside class="notes">
+                            <p>Let's make up a house style for lists</p>
                             <p>Good (list) style</p>
                         </aside>
                     </section>
@@ -544,7 +528,7 @@
                 
                 <section>
                     <section>
-                        <p>OK, so my lists may not be perfect, but...</p>
+                        <p>OK, so my lists may not be perfect and I actually like bold italic, but...</p>
                         
                         <aside class="notes">
                             <p>Do I actually need a style guide?</p>
@@ -558,6 +542,7 @@
                         <img class="stretch" src="img/drawing-london-cab.png"/>
                         
                         <aside class="notes">
+                            <p>Ford Motor Company, Volvo, Mazda...</p>
                             <p>So, how do I get one?</p>
                         </aside>
                     </section>
@@ -699,7 +684,7 @@
                     
                     <section>
                         <pre class="stretch">
-                            <code>148 (6)
+<!--                            <code>-->148 (6)
 293 (8)
 774 (3)
 694 (4)
@@ -708,7 +693,7 @@
 X (5)
 602 (2)
 X (7)
-X (1)</code>
+X (1)<!--</code>-->
                         </pre>
                     </section>
                     

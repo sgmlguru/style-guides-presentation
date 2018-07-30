@@ -47,11 +47,10 @@
                 <!-- START of queues slides -->
                 
                 <section>
-                    <section
-                        data-background-image="img/Bal2018nord0128-1.jpg"
-                        data-background-size="75%">
+                    <section>
                         
                         <!-- Image of queue -->
+                        <img src="img/Bal2018nord0128-1.jpg" width="75%"/>
                         
                         <p class="fragment">The semantics should be obvious</p>
                         
@@ -61,11 +60,10 @@
                     </section>
                     
                     
-                    <section
-                        data-background-image="img/Bal2018nord0128-3.jpg"
-                        data-background-size="75%">
+                    <section>
                         
                         <!-- Image of McDonald's Fleet St chaos -->
+                        <img src="img/Bal2018nord0128-3.jpg" width="75%"/>
                         
                         <p class="fragment">The semantics are, um, less than clear</p>
                         
@@ -253,31 +251,32 @@
                         
                         <p>...or is it?</p>
                         
-                        <div class="fragment">
+                        <div>
                             <pre class="stretch">
-                                <code class="xml" data-trim data-noescape>&lt;core:para-grp&gt;
+<!--                                <code class="xml" data-trim data-noescape>-->&lt;core:para-grp&gt;
     &lt;core:desig value=&quot;17&quot;&gt;17.&lt;/core:desig&gt;
     &lt;core:title&gt;General financial arrangements.&lt;/core:title&gt;
     
     &lt;core:para&gt;The following are to be paid out ...:&lt;/core:para&gt;
-    &lt;core:list <span class="fragment highlight-red">type=&quot;number&quot;</span>&gt;
+    &lt;core:list <span class="fragment highlight-red" data-fragment-index="1">type=&quot;number&quot;</span>&gt;
         &lt;core:listitem&gt;...&lt;/core:listitem&gt;
         ...
     &lt;/core:list&gt;
     ...
     &lt;core:para&gt;The following are to be paid out ...:&lt;/core:para&gt;
-    &lt;core:list type=&quot;lower-alpha&quot;&gt;
+    &lt;core:list <span class="fragment highlight-red" data-fragment-index="2">type=&quot;lower-alpha&quot;</span>&gt;
         &lt;core:listitem&gt;...&lt;/core:listitem&gt;
         ...
     &lt;/core:list&gt;
     ...
-&lt;/core:para-grp&gt;</code>
+&lt;/core:para-grp&gt;<!--</code>-->
                             </pre>
                         </div>
                         
                         <!-- Explanation of reason to above -->
                         <aside class="notes">
                             <p>(Lexis tale of me trying to understand)</p>
+                            <p>Note the intro paras</p>
                         </aside>
                     </section>
                     
